@@ -87,10 +87,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjv-5Z-TmZ">
-                                <rect key="frame" x="137" y="370" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="78" y="370" width="143" height="30"/>
+                                <state key="normal" title="initSegCtr"/>
                                 <connections>
                                     <action selector="initSegCtr:" destination="miJ-eh-87S" eventType="touchUpInside" id="iSn-Zs-2mB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDz-WN-66L">
+                                <rect key="frame" x="86" y="439" width="120" height="30"/>
+                                <state key="normal" title="Add+"/>
+                                <connections>
+                                    <action selector="addItem:" destination="miJ-eh-87S" eventType="touchUpInside" id="f94-vd-faL"/>
                                 </connections>
                             </button>
                         </subviews>
