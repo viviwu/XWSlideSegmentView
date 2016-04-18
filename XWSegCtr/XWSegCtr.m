@@ -19,6 +19,7 @@
 
 @property ( nonatomic, strong) UIScrollView * bgScroll;
 @property ( nonatomic, strong) UIView *scrollLine;
+@property ( nonatomic, strong) NSMutableArray * labels;
 
 @end
 
@@ -32,15 +33,26 @@
     self=[super initWithFrame:frame];
     if (self) {
         self.titles=titles;
-        [self addScroll];
         [self proxyDefaultPreferences];
+        [self addScroll];
+        [self configTitlesLabel];
+
     }
     return self;
 }
+-(void)awakeFromNib
+{
+    self.titles=_titles;
+    [self proxyDefaultPreferences];
+    [self addScroll];
+    [self configTitlesLabel];
+}
 
 -(void)addScroll{
-    _bgScroll=[[UIScrollView alloc]initWithFrame:self.frame];
-    [self addSubview:_bgScroll];
+    if (nil==_bgScroll) {
+        _bgScroll=[[UIScrollView alloc]initWithFrame:self.frame];
+        [self addSubview:_bgScroll];
+    }
     
     [_bgScroll setFrame:CGRectMake(0, 0, kScreenW, kItemH)];
     _bgScroll.backgroundColor=[UIColor whiteColor];
@@ -48,29 +60,16 @@
     _bgScroll.scrollEnabled = YES;
     _bgScroll.showsVerticalScrollIndicator = NO;
     _bgScroll.showsHorizontalScrollIndicator = YES;
+    
 }
-
--(void)proxyDefaultPreferences
-{
-//    self.backgroundColor=[UIColor whiteColor];
-    self.titleColor=[UIColor blackColor];
-    self.titleFontSize=17.0;
-    self.scrollLineColor=[UIColor purpleColor];
-    self.titleSelectedColor=[UIColor greenColor];
-    self.haveRightLine=NO;
-}
-
--(void)awakeFromNib
-{
-    self.titles=_titles;
-    [self addScroll];
-    [self proxyDefaultPreferences];
-}
-
 -(void)layoutSubviews
 {
     [super layoutSubviews];
+     self.bgScroll.backgroundColor=self.backgroundColor;
     [self configTitlesLabel];
+    for (UILabel * label in self.labels) {
+        label.textColor=self.titleColor;
+    }
 }
 
 -(void)addnewItemTitle:(NSString*)title
@@ -88,11 +87,14 @@
 
 - (void)configTitlesLabel{
     
+    if (nil==_bgScroll) {
+        NSLog(@"sfsdgdfhgfjghkjghkhjljk;");
+    }
     _bgScroll.contentSize=CGSizeMake(kItemW*_titles.count, 0);
     _bgScroll.directionalLockEnabled = YES;
     _bgScroll.alwaysBounceVertical = NO;
     [_bgScroll.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-//    NSLog(@"_titles.count==%lu", (unsigned long)_titles.count);
+    NSLog(@"_titles.count==%lu", (unsigned long)_titles.count);
     NSLog(@"%@", NSStringFromCGSize(_bgScroll.contentSize));
     for (int i = 0;  i < self.titles.count; i++)
     {
@@ -116,6 +118,7 @@
         titleLabel.userInteractionEnabled = YES;
         [titleLabel addGestureRecognizer:tap]; 
         [_bgScroll addSubview:titleLabel];
+        [self.labels addObject:titleLabel];
     }
     [self selectLabelWithIndex:0];
 
@@ -154,6 +157,19 @@
     }
     
 }
+
+
+-(void)proxyDefaultPreferences
+{
+    self.labels=[NSMutableArray array];
+    self.backgroundColor=[UIColor yellowColor];
+    self.titleColor=[UIColor blackColor];
+    self.titleFontSize=17.0;
+    self.scrollLineColor=[UIColor purpleColor];
+    self.titleSelectedColor=[UIColor greenColor];
+    self.haveRightLine=NO;
+}
+
 
 - (void)changeTitleColorWithColor:(UIColor *)color{
     for (int i = 0; i < _titles.count; i ++) {

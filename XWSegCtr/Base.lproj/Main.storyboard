@@ -72,7 +72,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="1039"/>
+            <point key="canvasLocation" x="1280" y="1059"/>
+        </scene>
+        <!--CodeVC-->
+        <scene sceneID="Jm1-GN-PVd">
+            <objects>
+                <viewController id="miJ-eh-87S" customClass="XWCodeVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qa3-PO-7HD"/>
+                        <viewControllerLayoutGuide type="bottom" id="rkc-q8-ycC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vPY-Qt-adT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjv-5Z-TmZ">
+                                <rect key="frame" x="137" y="370" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="initSegCtr:" destination="miJ-eh-87S" eventType="touchUpInside" id="iSn-Zs-2mB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="43t-eB-qmH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YaC-17-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1294" y="1820"/>
         </scene>
         <!--Item-->
         <scene sceneID="EBt-aS-n49">
@@ -105,11 +133,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="PJM-C0-Er5" kind="relationship" relationship="viewControllers" id="Q2g-BI-rXJ"/>
+                        <segue destination="SBx-7z-b5h" kind="relationship" relationship="viewControllers" id="gqC-9a-V9c"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgB-BD-qOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="360" y="1059"/>
+            <point key="canvasLocation" x="328" y="1523"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="cJJ-Tz-1GM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SBx-7z-b5h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="zz8-iz-IQf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nEM-3t-sgd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="miJ-eh-87S" kind="relationship" relationship="rootViewController" id="1tC-G9-ZFT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RNi-bX-fHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="1772"/>
         </scene>
     </scenes>
 </document>
