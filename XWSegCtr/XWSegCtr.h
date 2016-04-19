@@ -13,7 +13,7 @@ typedef void (^XWSelectedIndexHandle)(NSInteger selectedIndex);
 @protocol TouchLabelDelegate <NSObject>
 
 - (void)didSelectedItemAtIndex:(NSInteger)index;
-- (void)didDelectedItemWithNewTitles:(NSArray*)newtitles;
+- (void)longPressToDeleteItem:(NSArray*)newtitles;
 
 @end
 
@@ -33,6 +33,6 @@ typedef void (^XWSelectedIndexHandle)(NSInteger selectedIndex);
 -(id)initWithFrame:(CGRect)frame Titles:(NSArray*)titles;
 -(void)addnewItemTitle:(NSString*)title;
 -(void)addNewItemsTitles:(NSArray*)titles;
-
+-(NSArray*)deleteSelectedItem;
 
 @end

@@ -32,7 +32,15 @@
     _collectionView.hidden=NO;
     // Do any additional setup after loading the view, typically from a nib.
 }
--(void)didDelectedItemWithNewTitles:(NSArray*)newtitles
+
+- (IBAction)deleteSelectedItem:(id)sender {
+    if (_segCtr) {
+        NSArray * titles=[_segCtr deleteSelectedItem];
+        NSLog(@"%@", titles);
+    }
+}
+
+-(void)longPressToDeleteItem:(NSArray*)newtitles
 {
     NSLog(@"%s-->%@", __func__, newtitles);
 }

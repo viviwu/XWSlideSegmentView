@@ -20,13 +20,19 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
--(void)didDelectedItemWithNewTitles:(NSArray*)newtitles
+-(void)longPressToDeleteItem:(NSArray*)newtitles
 {
     NSLog(@"%s-->%@", __func__, newtitles);
 }
 - (void)didSelectedItemAtIndex:(NSInteger)index
 {
     NSLog(@"%s---%ld", __func__, (long)index);
+}
+- (IBAction)deleteSelectedItem:(id)sender {
+    if (_segCtr) {
+        NSArray * titles=[_segCtr deleteSelectedItem];
+        NSLog(@"%@", titles);
+    }
 }
 
 - (IBAction)addItem:(id)sender {

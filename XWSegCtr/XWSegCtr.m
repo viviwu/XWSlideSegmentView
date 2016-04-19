@@ -90,7 +90,20 @@
     [self configTitlesLabel];
 }
 
-
+-(NSArray * )deleteSelectedItem
+{
+    if (self.titles.count<1) {
+        return nil;
+    }
+    NSMutableArray * newTitles=[NSMutableArray arrayWithArray:self.titles];
+    [newTitles removeObjectAtIndex:_selectedIndex];
+    self.titles=newTitles;
+    if (newTitles.count <= _selectedIndex) {
+        _selectedIndex=newTitles.count-1;
+    }
+    [self configTitlesLabel];
+    return newTitles;
+}
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -155,8 +168,8 @@
         [UIView animateWithDuration:1.0f animations:^{
             [self configTitlesLabel];
         }];
-        if ([self.touchDelegate respondsToSelector:@selector(didDelectedItemWithNewTitles:)]) {
-            [self.touchDelegate didDelectedItemWithNewTitles:self.titles];
+        if ([self.touchDelegate respondsToSelector:@selector(longPressToDeleteItem:)]) {
+            [self.touchDelegate longPressToDeleteItem:self.titles];
         }
     }
 }
