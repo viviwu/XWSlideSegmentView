@@ -21,10 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _segCtr.titleColor=[UIColor blueColor];
-    _segCtr.titleSelectedColor=[UIColor purpleColor];
+    _segCtr.titleColor=[UIColor redColor]; 
     _segCtr.touchDelegate=(id)self;
-    
+    _segCtr.selectedIndex=2;
     _segCtr.titles= @[@"苹果",@"香蕉",@"橘子",@"葡萄",@"西瓜"];
     _segCtr.selectedIndexHandle=^(NSInteger selectedIndex){
         NSLog(@"selectedIndex==%ld", (unsigned long)selectedIndex);

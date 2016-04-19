@@ -19,7 +19,7 @@
 
 @property ( nonatomic, strong) UIScrollView * bgScroll;
 @property ( nonatomic, strong) UIView *scrollLine;
-@property ( nonatomic, strong) NSMutableArray * labels;
+//@property ( nonatomic, strong) NSMutableArray * labels;
 
 @end
 
@@ -67,15 +67,25 @@
     [super layoutSubviews];
      self.bgScroll.backgroundColor=self.backgroundColor;
     [self configTitlesLabel];
-    for (UILabel * label in self.labels) {
-        label.textColor=self.titleColor;
-    }
+ 
 }
 
 -(void)addnewItemTitle:(NSString*)title
 {
     NSMutableArray * mArr=[NSMutableArray arrayWithArray:_titles];
     [mArr addObject:title];
+    _titles=mArr;
+    [self configTitlesLabel];
+}
+
+-(void)addNewItemsTitles:(NSArray*)titles
+{
+    NSMutableArray * mArr=[NSMutableArray arrayWithArray:_titles];
+    for (NSString *title in titles) {
+        if ([title isKindOfClass:[NSString class]]) {
+            [mArr addObject:title];
+        }
+    }
     _titles=mArr;
     [self configTitlesLabel];
 }
@@ -87,15 +97,12 @@
 
 - (void)configTitlesLabel{
     
-    if (nil==_bgScroll) {
-        NSLog(@"sfsdgdfhgfjghkjghkhjljk;");
-    }
     _bgScroll.contentSize=CGSizeMake(kItemW*_titles.count, 0);
     _bgScroll.directionalLockEnabled = YES;
     _bgScroll.alwaysBounceVertical = NO;
     [_bgScroll.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    NSLog(@"_titles.count==%lu", (unsigned long)_titles.count);
-    NSLog(@"%@", NSStringFromCGSize(_bgScroll.contentSize));
+    
+//    [self.labels removeAllObjects];
     for (int i = 0;  i < self.titles.count; i++)
     {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(i * kItemW, 0, kItemW, kItemH)];
@@ -103,8 +110,9 @@
         titleLabel.textColor =  self.titleColor;
         titleLabel.font = [UIFont systemFontOfSize:self.titleFontSize];
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        if (_haveRightLine) {
+        if (_isSeparated) {
             if (i < self.titles.count - 1) {
+                
                 UIView *line = [[UIView alloc]initWithFrame:CGRectMake(kItemW - 0.5, kItemH/7*2, 1.0, kItemH/7*3)];
                 [line setBackgroundColor:[UIColor lightGrayColor]];
                 [titleLabel addSubview:line];
@@ -118,13 +126,13 @@
         titleLabel.userInteractionEnabled = YES;
         [titleLabel addGestureRecognizer:tap]; 
         [_bgScroll addSubview:titleLabel];
-        [self.labels addObject:titleLabel];
+//        [self.labels addObject:titleLabel];
     }
-    [self selectLabelWithIndex:0];
-
     _scrollLine = [[UIView alloc]initWithFrame:CGRectMake(0, kItemH - kScrollLineH, kItemW, kScrollLineH)];
-    [_scrollLine setBackgroundColor:self.scrollLineColor];
+    [_scrollLine setBackgroundColor:self.selectedColor];
     [_bgScroll addSubview:_scrollLine];
+    
+    [self selectLabelWithIndex:self.selectedIndex];
 }
 
 - (void)touchLabelWithGesture:(UITapGestureRecognizer *)tap{
@@ -142,7 +150,7 @@
     for (int i = 0; i < self.titles.count; i++) {
         UILabel *label = [self viewWithTag:100+i];
         if ([label isEqual:selectedLabel]) {
-            label.textColor = self.titleSelectedColor;
+            label.textColor = self.selectedColor;
         }else{
             label.textColor = self.titleColor;
         }
@@ -161,13 +169,13 @@
 
 -(void)proxyDefaultPreferences
 {
-    self.labels=[NSMutableArray array];
-    self.backgroundColor=[UIColor yellowColor];
-    self.titleColor=[UIColor blackColor];
+//    self.labels=[NSMutableArray array];
+    self.backgroundColor=[UIColor whiteColor];
+    self.titleColor=[UIColor lightGrayColor];
     self.titleFontSize=17.0;
-    self.scrollLineColor=[UIColor purpleColor];
-    self.titleSelectedColor=[UIColor greenColor];
-    self.haveRightLine=NO;
+    self.selectedColor=[UIColor greenColor];
+    self.isSeparated=NO;
+    self.selectedIndex=0;
 }
 
 
