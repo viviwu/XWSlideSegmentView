@@ -20,7 +20,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)SelectedItemWithIndex:(NSInteger)index
+-(void)didDelectedItemWithNewTitles:(NSArray*)newtitles
+{
+    NSLog(@"%s-->%@", __func__, newtitles);
+}
+- (void)didSelectedItemAtIndex:(NSInteger)index
 {
     NSLog(@"%s---%ld", __func__, (long)index);
 }

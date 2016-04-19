@@ -32,14 +32,18 @@
     _collectionView.hidden=NO;
     // Do any additional setup after loading the view, typically from a nib.
 }
+-(void)didDelectedItemWithNewTitles:(NSArray*)newtitles
+{
+    NSLog(@"%s-->%@", __func__, newtitles);
+}
 - (IBAction)addItem:(UIBarButtonItem *)sender {
     
     [_segCtr addnewItemTitle:@"新来的"];
 }
 
-- (void)SelectedItemWithIndex:(NSInteger)index
+- (void)didSelectedItemAtIndex:(NSInteger)index
 {
-    NSLog(@"SelectedItemWithIndex==%ld", (long)index);
+    NSLog(@"didSelectedItemAtIndex==%ld", (long)index);
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

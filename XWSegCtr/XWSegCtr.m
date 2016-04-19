@@ -90,6 +90,8 @@
     [self configTitlesLabel];
 }
 
+
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     _bgScroll.contentSize=CGSizeMake(kItemW*_titles.count, 0);
@@ -124,15 +126,39 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchLabelWithGesture:)];
         tap.numberOfTapsRequired = 1;
         titleLabel.userInteractionEnabled = YES;
-        [titleLabel addGestureRecognizer:tap]; 
+        [titleLabel addGestureRecognizer:tap];
+        
+        UILongPressGestureRecognizer * longPress=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(delecteThisitem:)];
+        longPress.minimumPressDuration=0.3;
+        longPress.allowableMovement=5;
+        [titleLabel addGestureRecognizer:longPress];
         [_bgScroll addSubview:titleLabel];
-//        [self.labels addObject:titleLabel];
     }
     _scrollLine = [[UIView alloc]initWithFrame:CGRectMake(0, kItemH - kScrollLineH, kItemW, kScrollLineH)];
     [_scrollLine setBackgroundColor:self.selectedColor];
     [_bgScroll addSubview:_scrollLine];
     
     [self selectLabelWithIndex:self.selectedIndex];
+}
+
+-(void)delecteThisitem:(UILongPressGestureRecognizer*)press{
+    
+    if (UIGestureRecognizerStateBegan == press.state ) {
+        UILabel *label = (UILabel *)press.view;
+        NSInteger index = label.tag - 100;
+        NSMutableArray * newTitles=[NSMutableArray arrayWithArray:self.titles];
+        if (newTitles.count>index) {
+            [newTitles removeObjectAtIndex:index];
+        } 
+        self.titles=newTitles;
+        self.selectedIndex=0;
+        [UIView animateWithDuration:1.0f animations:^{
+            [self configTitlesLabel];
+        }];
+        if ([self.touchDelegate respondsToSelector:@selector(didDelectedItemWithNewTitles:)]) {
+            [self.touchDelegate didDelectedItemWithNewTitles:self.titles];
+        }
+    }
 }
 
 - (void)touchLabelWithGesture:(UITapGestureRecognizer *)tap{
@@ -160,8 +186,8 @@
     [UIView animateWithDuration:0.3 animations:^{
         [_scrollLine setFrame:scrollLineFrame];
     }];
-    if ([self.touchDelegate respondsToSelector:@selector(SelectedItemWithIndex:)]) {
-        [self.touchDelegate SelectedItemWithIndex:index];
+    if ([self.touchDelegate respondsToSelector:@selector(didSelectedItemAtIndex:)]) {
+        [self.touchDelegate didSelectedItemAtIndex:index];
     }
     
 }
