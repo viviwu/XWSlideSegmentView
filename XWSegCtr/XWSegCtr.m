@@ -178,6 +178,7 @@
     
     UILabel *label = (UILabel *)tap.view;
     NSInteger index = label.tag - 100;
+    self.selectedIndex=index;
     [self selectLabelWithIndex:index];
     if (self.selectedIndexHandle) {
         self.selectedIndexHandle(index);
