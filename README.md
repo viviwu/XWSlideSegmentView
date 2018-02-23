@@ -16,3 +16,7 @@
 #### ---支持动态添加元素--
 ######  [_segCtr addnewItemTitle:@"新来的"];
 
+![效果图](https://github.com/viviwu/XWSlideSegmentView/blob/master/XWSlideSegmentView/屏幕快照%202018-02-23%2013.27.25.png)
+
+****
+
