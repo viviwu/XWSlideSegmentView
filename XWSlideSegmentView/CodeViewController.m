@@ -28,6 +28,11 @@
 {
     NSLog(@"%s---%ld", __func__, (long)index);
 }
+
+- (void)addNewChannelAction{
+    NSLog(@"%s", __func__);
+}
+
 - (IBAction)deleteSelectedItem:(id)sender {
     if (_segCtr) {
         NSArray * titles=[_segCtr deleteSelectedItem];

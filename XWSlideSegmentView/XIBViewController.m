@@ -54,6 +54,10 @@
     NSLog(@"didSelectedItemAtIndex==%ld", (long)index);
 }
 
+- (void)addNewChannelAction{
+    NSLog(@"%s", __func__);
+}
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;

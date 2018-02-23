@@ -14,6 +14,7 @@ typedef void (^XWSelectHandle)(NSInteger selectedIndex);
 
 - (void)didSelectedItemAtIndex:(NSInteger)index;
 - (void)longPressToDeleteItem:(NSArray*)newtitles;
+- (void)addNewChannelAction;
 
 @end
 

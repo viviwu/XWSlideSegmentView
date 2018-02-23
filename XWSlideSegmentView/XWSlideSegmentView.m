@@ -13,11 +13,12 @@
 
 #define kItemW [UIScreen mainScreen].bounds.size.width/5
 #define kItemH 35.0f
-#define kScrollLineH    2.0f
+#define kScrollLineH    1.0f
 
 @interface XWSlideSegmentView()
 
 @property ( nonatomic, strong) UIScrollView * bgScroll;
+@property (nonatomic, strong) UIButton * addBtn;
 @property ( nonatomic, strong) UIView *scrollLine;
 //@property ( nonatomic, strong) NSMutableArray * labels;
 
@@ -25,7 +26,7 @@
 
 @implementation XWSlideSegmentView
 
--(id)initWithFrame:(CGRect)frame Titles:(NSArray*)titles
+- (id)initWithFrame:(CGRect)frame Titles:(NSArray*)titles
 {
     CGRect rect = frame;
     frame.size.height = kItemH;
@@ -41,7 +42,7 @@
     return self;
 }
 
--(void)awakeFromNib
+- (void)awakeFromNib
 {
     self.titles = _titles;
     [self proxyDefaultPreferences];
@@ -51,7 +52,7 @@
     [super awakeFromNib];
 }
 
--(void)addScroll{
+- (void)addScroll{
     if (nil == _bgScroll) {
         _bgScroll = [[UIScrollView alloc]initWithFrame:self.frame];
         [self addSubview:_bgScroll];
@@ -64,8 +65,26 @@
     _bgScroll.showsVerticalScrollIndicator = NO;
     _bgScroll.showsHorizontalScrollIndicator = YES;
     
+    if (!_addBtn) {
+        _addBtn = [[UIButton alloc]initWithFrame:CGRectMake(kScreenW-50, 0, 50.0, 34.0)];
+        [self addSubview:_addBtn];
+    }
+    _addBtn.backgroundColor=UIColor.whiteColor;
+    _addBtn.alpha = 0.8;
+    [_addBtn setTitle:@" ➕ " forState:UIControlStateNormal];
+//    _addBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    [_addBtn setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
+    [self bringSubviewToFront:_addBtn];
+    [_addBtn addTarget:self action:@selector(addNewChannel) forControlEvents:UIControlEventTouchDown];
 }
--(void)layoutSubviews
+
+- (void)addNewChannel{
+    if ([self.touchDelegate respondsToSelector:@selector(addNewChannelAction)]) {
+        [self.touchDelegate addNewChannelAction];
+    }
+}
+
+- (void)layoutSubviews
 {
     [super layoutSubviews];
      self.bgScroll.backgroundColor = self.backgroundColor;
@@ -73,7 +92,7 @@
  
 }
 
--(void)addnewItemTitle:(NSString*)title
+- (void)addnewItemTitle:(NSString*)title
 {
     NSMutableArray * mArr = [NSMutableArray arrayWithArray:_titles];
     [mArr addObject:title];
@@ -81,7 +100,7 @@
     [self configTitlesLabel];
 }
 
--(void)addNewItemsTitles:(NSArray*)titles
+- (void)addNewItemsTitles:(NSArray*)titles
 {
     NSMutableArray * mArr = [NSMutableArray arrayWithArray:_titles];
     for (NSString *title in titles) {
@@ -93,7 +112,7 @@
     [self configTitlesLabel];
 }
 
--(NSArray * )deleteSelectedItem
+- (NSArray * )deleteSelectedItem
 {
     if (self.titles.count<1) {
         return nil;
@@ -108,7 +127,7 @@
     return newTitles;
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     _bgScroll.contentSize = CGSizeMake(kItemW*_titles.count, 0);
 }
@@ -157,7 +176,7 @@
     [self selectLabelWithIndex:self.selectedIndex];
 }
 
--(void)delecteThisitem:(UILongPressGestureRecognizer*)press{
+- (void)delecteThisitem:(UILongPressGestureRecognizer*)press{
     
     if (UIGestureRecognizerStateBegan == press.state ) {
         UILabel *label = (UILabel *)press.view;
@@ -210,7 +229,7 @@
 }
 
 
--(void)proxyDefaultPreferences
+- (void)proxyDefaultPreferences
 {
 //    self.labels = [NSMutableArray array];
     self.backgroundColor = [UIColor whiteColor];
