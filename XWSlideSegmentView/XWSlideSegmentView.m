@@ -79,8 +79,8 @@
 }
 
 - (void)addNewChannel{
-    if ([self.touchDelegate respondsToSelector:@selector(addNewChannelAction)]) {
-        [self.touchDelegate addNewChannelAction];
+    if ([self.selectDelegate respondsToSelector:@selector(addNewChannelAction)]) {
+        [self.selectDelegate addNewChannelAction];
     }
 }
 
@@ -190,8 +190,8 @@
         [UIView animateWithDuration:1.0f animations:^{
             [self configTitlesLabel];
         }];
-        if ([self.touchDelegate respondsToSelector:@selector(longPressToDeleteItem:)]) {
-            [self.touchDelegate longPressToDeleteItem:self.titles];
+        if ([self.selectDelegate respondsToSelector:@selector(longPressToDeleteItem:)]) {
+            [self.selectDelegate longPressToDeleteItem:self.titles];
         }
     }
 }
@@ -222,8 +222,8 @@
     [UIView animateWithDuration:0.3 animations:^{
         [_scrollLine setFrame:scrollLineFrame];
     }];
-    if ([self.touchDelegate respondsToSelector:@selector(didSelectedItemAtIndex:)]) {
-        [self.touchDelegate didSelectedItemAtIndex:index];
+    if ([self.selectDelegate respondsToSelector:@selector(didSelectedItemAtIndex:)]) {
+        [self.selectDelegate didSelectedItemAtIndex:index];
     }
     
 }

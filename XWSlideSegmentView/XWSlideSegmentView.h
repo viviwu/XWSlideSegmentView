@@ -24,7 +24,7 @@ typedef void (^XWSelectHandle)(NSInteger selectedIndex);
 @property(nonatomic, assign)NSUInteger selectedIndex;
 @property ( nonatomic, assign) BOOL isSeparated;
 @property(nonatomic, copy) XWSelectHandle  selectedIndexHandle;
-@property ( nonatomic, strong) id<XWSegSelectDelegate>touchDelegate;
+@property ( nonatomic, assign) id<XWSegSelectDelegate>selectDelegate;
 
 
 @property ( nonatomic, strong) UIColor *titleColor;
