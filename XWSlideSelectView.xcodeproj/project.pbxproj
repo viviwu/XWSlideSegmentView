@@ -11,11 +11,11 @@
 		0D8A43CB1CC48DF000261036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43CA1CC48DF000261036 /* AppDelegate.m */; };
 		0D8A43CE1CC48DF000261036 /* XIBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43CD1CC48DF000261036 /* XIBViewController.m */; };
 		0D8A43D11CC48DF000261036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A43CF1CC48DF000261036 /* Main.storyboard */; };
-		0D8A43D41CC48DF000261036 /* XWSegCtr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43D21CC48DF000261036 /* XWSegCtr.xcdatamodeld */; };
+		0D8A43D41CC48DF000261036 /* XWSlideSegmentView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43D21CC48DF000261036 /* XWSlideSegmentView.xcdatamodeld */; };
 		0D8A43D61CC48DF000261036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A43D51CC48DF000261036 /* Assets.xcassets */; };
 		0D8A43D91CC48DF000261036 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D8A43D71CC48DF000261036 /* LaunchScreen.storyboard */; };
-		0D8A43E41CC48DF000261036 /* XWSegCtrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43E31CC48DF000261036 /* XWSegCtrTests.m */; };
-		0D8A43EF1CC48DF000261036 /* XWSegCtrUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43EE1CC48DF000261036 /* XWSegCtrUITests.m */; };
+		0D8A43E41CC48DF000261036 /* XWSlideSegmentViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43E31CC48DF000261036 /* XWSlideSegmentViewTests.m */; };
+		0D8A43EF1CC48DF000261036 /* XWSlideSegmentViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43EE1CC48DF000261036 /* XWSlideSegmentViewUITests.m */; };
 		0D8A43FE1CC490D600261036 /* XWSlideSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43FD1CC490D600261036 /* XWSlideSegmentView.m */; };
 		0DAC6AA21CC51B590003E9F0 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC6AA11CC51B590003E9F0 /* CodeViewController.m */; };
 /* End PBXBuildFile section */
@@ -26,14 +26,14 @@
 			containerPortal = 0D8A43BB1CC48DF000261036 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0D8A43C21CC48DF000261036;
-			remoteInfo = XWSegCtr;
+			remoteInfo = XWSlideSegmentView;
 		};
 		0D8A43EB1CC48DF000261036 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D8A43BB1CC48DF000261036 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0D8A43C21CC48DF000261036;
-			remoteInfo = XWSegCtr;
+			remoteInfo = XWSlideSegmentView;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -45,15 +45,15 @@
 		0D8A43CC1CC48DF000261036 /* XIBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XIBViewController.h; sourceTree = "<group>"; };
 		0D8A43CD1CC48DF000261036 /* XIBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XIBViewController.m; sourceTree = "<group>"; };
 		0D8A43D01CC48DF000261036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0D8A43D31CC48DF000261036 /* XWSegCtr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XWSegCtr.xcdatamodel; sourceTree = "<group>"; };
+		0D8A43D31CC48DF000261036 /* XWSlideSegmentView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = XWSlideSegmentView.xcdatamodel; sourceTree = "<group>"; };
 		0D8A43D51CC48DF000261036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D8A43D81CC48DF000261036 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D8A43DA1CC48DF000261036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D8A43DF1CC48DF000261036 /* XWSlideSelectViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XWSlideSelectViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D8A43E31CC48DF000261036 /* XWSegCtrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWSegCtrTests.m; sourceTree = "<group>"; };
+		0D8A43E31CC48DF000261036 /* XWSlideSegmentViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWSlideSegmentViewTests.m; sourceTree = "<group>"; };
 		0D8A43E51CC48DF000261036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D8A43EA1CC48DF000261036 /* XWSlideSelectViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XWSlideSelectViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D8A43EE1CC48DF000261036 /* XWSegCtrUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWSegCtrUITests.m; sourceTree = "<group>"; };
+		0D8A43EE1CC48DF000261036 /* XWSlideSegmentViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWSlideSegmentViewUITests.m; sourceTree = "<group>"; };
 		0D8A43F01CC48DF000261036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D8A43FC1CC490D600261036 /* XWSlideSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWSlideSegmentView.h; sourceTree = "<group>"; };
 		0D8A43FD1CC490D600261036 /* XWSlideSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSlideSegmentView.m; sourceTree = "<group>"; };
@@ -89,9 +89,9 @@
 		0D8A43BA1CC48DF000261036 = {
 			isa = PBXGroup;
 			children = (
-				0D8A43C51CC48DF000261036 /* XWSegCtr */,
-				0D8A43E21CC48DF000261036 /* XWSegCtrTests */,
-				0D8A43ED1CC48DF000261036 /* XWSegCtrUITests */,
+				0D8A43C51CC48DF000261036 /* XWSlideSegmentView */,
+				0D8A43E21CC48DF000261036 /* XWSlideSegmentViewTests */,
+				0D8A43ED1CC48DF000261036 /* XWSlideSegmentViewUITests */,
 				0D8A43C41CC48DF000261036 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,7 +106,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0D8A43C51CC48DF000261036 /* XWSegCtr */ = {
+		0D8A43C51CC48DF000261036 /* XWSlideSegmentView */ = {
 			isa = PBXGroup;
 			children = (
 				0D8A43C91CC48DF000261036 /* AppDelegate.h */,
@@ -121,10 +121,10 @@
 				0D8A43D51CC48DF000261036 /* Assets.xcassets */,
 				0D8A43D71CC48DF000261036 /* LaunchScreen.storyboard */,
 				0D8A43DA1CC48DF000261036 /* Info.plist */,
-				0D8A43D21CC48DF000261036 /* XWSegCtr.xcdatamodeld */,
+				0D8A43D21CC48DF000261036 /* XWSlideSegmentView.xcdatamodeld */,
 				0D8A43C61CC48DF000261036 /* Supporting Files */,
 			);
-			path = XWSegCtr;
+			path = XWSlideSegmentView;
 			sourceTree = "<group>";
 		};
 		0D8A43C61CC48DF000261036 /* Supporting Files */ = {
@@ -135,22 +135,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0D8A43E21CC48DF000261036 /* XWSegCtrTests */ = {
+		0D8A43E21CC48DF000261036 /* XWSlideSegmentViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				0D8A43E31CC48DF000261036 /* XWSegCtrTests.m */,
+				0D8A43E31CC48DF000261036 /* XWSlideSegmentViewTests.m */,
 				0D8A43E51CC48DF000261036 /* Info.plist */,
 			);
-			path = XWSegCtrTests;
+			path = XWSlideSegmentViewTests;
 			sourceTree = "<group>";
 		};
-		0D8A43ED1CC48DF000261036 /* XWSegCtrUITests */ = {
+		0D8A43ED1CC48DF000261036 /* XWSlideSegmentViewUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0D8A43EE1CC48DF000261036 /* XWSegCtrUITests.m */,
+				0D8A43EE1CC48DF000261036 /* XWSlideSegmentViewUITests.m */,
 				0D8A43F01CC48DF000261036 /* Info.plist */,
 			);
-			path = XWSegCtrUITests;
+			path = XWSlideSegmentViewUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,7 +169,7 @@
 			dependencies = (
 			);
 			name = XWSlideSelectView;
-			productName = XWSegCtr;
+			productName = XWSlideSegmentView;
 			productReference = 0D8A43C31CC48DF000261036 /* XWSlideSelectView.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -187,7 +187,7 @@
 				0D8A43E11CC48DF000261036 /* PBXTargetDependency */,
 			);
 			name = XWSlideSelectViewTests;
-			productName = XWSegCtrTests;
+			productName = XWSlideSegmentViewTests;
 			productReference = 0D8A43DF1CC48DF000261036 /* XWSlideSelectViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -205,7 +205,7 @@
 				0D8A43EC1CC48DF000261036 /* PBXTargetDependency */,
 			);
 			name = XWSlideSelectViewUITests;
-			productName = XWSegCtrUITests;
+			productName = XWSlideSegmentViewUITests;
 			productReference = 0D8A43EA1CC48DF000261036 /* XWSlideSelectViewUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -283,7 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D8A43D41CC48DF000261036 /* XWSegCtr.xcdatamodeld in Sources */,
+				0D8A43D41CC48DF000261036 /* XWSlideSegmentView.xcdatamodeld in Sources */,
 				0D8A43CE1CC48DF000261036 /* XIBViewController.m in Sources */,
 				0D8A43FE1CC490D600261036 /* XWSlideSegmentView.m in Sources */,
 				0D8A43CB1CC48DF000261036 /* AppDelegate.m in Sources */,
@@ -296,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D8A43E41CC48DF000261036 /* XWSegCtrTests.m in Sources */,
+				0D8A43E41CC48DF000261036 /* XWSlideSegmentViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D8A43EF1CC48DF000261036 /* XWSegCtrUITests.m in Sources */,
+				0D8A43EF1CC48DF000261036 /* XWSlideSegmentViewUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,9 +445,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = XWSegCtr/Info.plist;
+				INFOPLIST_FILE = XWSlideSegmentView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSegCtr;
+				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSlideSegmentView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -456,9 +456,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = XWSegCtr/Info.plist;
+				INFOPLIST_FILE = XWSlideSegmentView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSegCtr;
+				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSlideSegmentView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -467,9 +467,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = XWSegCtrTests/Info.plist;
+				INFOPLIST_FILE = XWSlideSegmentViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSegCtrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSlideSegmentViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XWSlideSelectView.app/XWSlideSelectView";
 			};
@@ -479,9 +479,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = XWSegCtrTests/Info.plist;
+				INFOPLIST_FILE = XWSlideSegmentViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSegCtrTests;
+				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSlideSegmentViewTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XWSlideSelectView.app/XWSlideSelectView";
 			};
@@ -490,22 +490,22 @@
 		0D8A43FA1CC48DF000261036 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = XWSegCtrUITests/Info.plist;
+				INFOPLIST_FILE = XWSlideSegmentViewUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSegCtrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSlideSegmentViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = XWSegCtr;
+				TEST_TARGET_NAME = XWSlideSegmentView;
 			};
 			name = Debug;
 		};
 		0D8A43FB1CC48DF000261036 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = XWSegCtrUITests/Info.plist;
+				INFOPLIST_FILE = XWSlideSegmentViewUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSegCtrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = WU.XWSlideSegmentViewUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = XWSegCtr;
+				TEST_TARGET_NAME = XWSlideSegmentView;
 			};
 			name = Release;
 		};
@@ -551,13 +551,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0D8A43D21CC48DF000261036 /* XWSegCtr.xcdatamodeld */ = {
+		0D8A43D21CC48DF000261036 /* XWSlideSegmentView.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0D8A43D31CC48DF000261036 /* XWSegCtr.xcdatamodel */,
+				0D8A43D31CC48DF000261036 /* XWSlideSegmentView.xcdatamodel */,
 			);
-			currentVersion = 0D8A43D31CC48DF000261036 /* XWSegCtr.xcdatamodel */;
-			path = XWSegCtr.xcdatamodeld;
+			currentVersion = 0D8A43D31CC48DF000261036 /* XWSlideSegmentView.xcdatamodel */;
+			path = XWSlideSegmentView.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
