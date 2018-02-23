@@ -37,7 +37,7 @@
         [self proxyDefaultPreferences];
         [self addScroll];
         [self configTitlesLabel];
-
+        
     }
     return self;
 }
@@ -72,7 +72,7 @@
     _addBtn.backgroundColor=UIColor.whiteColor;
     _addBtn.alpha = 0.8;
     [_addBtn setTitle:@" ➕ " forState:UIControlStateNormal];
-//    _addBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    //    _addBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     [_addBtn setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
     [self bringSubviewToFront:_addBtn];
     [_addBtn addTarget:self action:@selector(addNewChannel) forControlEvents:UIControlEventTouchDown];
@@ -87,9 +87,9 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-     self.bgScroll.backgroundColor = self.backgroundColor;
+    self.bgScroll.backgroundColor = self.backgroundColor;
     [self configTitlesLabel];
- 
+    
 }
 
 - (void)addnewItemTitle:(NSString*)title
@@ -139,7 +139,7 @@
     _bgScroll.alwaysBounceVertical = NO;
     [_bgScroll.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-//    [self.labels removeAllObjects];
+    //    [self.labels removeAllObjects];
     for (int i = 0;  i < self.titles.count; i++)
     {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(i * kItemW, 0, kItemW, kItemH)];
@@ -184,7 +184,7 @@
         NSMutableArray * newTitles = [NSMutableArray arrayWithArray:self.titles];
         if (newTitles.count>index) {
             [newTitles removeObjectAtIndex:index];
-        } 
+        }
         self.titles = newTitles;
         _selectedIndex = 0;
         [UIView animateWithDuration:1.0f animations:^{
@@ -200,20 +200,24 @@
     
     UILabel *label = (UILabel *)tap.view;
     NSInteger index = label.tag - 100;
-    _selectedIndex = index;
+    
     [self selectLabelWithIndex:index];
     if (self.selectHandle) {
         self.selectHandle(index);
     }
+    _selectedIndex = index;
 }
+
 -(void)setSelectedIndex:(NSUInteger)selectedIndex
 {
-    _selectedIndex = selectedIndex;
-    [self selectLabelWithIndex: selectedIndex];
+    if (selectedIndex != _selectedIndex) {
+        [self scrollLabelWithIndex:selectedIndex];
+        _selectedIndex = selectedIndex;
+    }else{ }
 }
-- (void)selectLabelWithIndex:(NSInteger)index{
-    
-    UILabel *selectedLabel = [self viewWithTag:index+100];
+
+- (void)scrollLabelWithIndex:(NSInteger)selectedIndex{
+    UILabel *selectedLabel = [self viewWithTag:selectedIndex+100];
     for (int i = 0; i < self.titles.count; i++) {
         UILabel *label = [self viewWithTag:100+i];
         if ([label isEqual:selectedLabel]) {
@@ -223,26 +227,30 @@
         }
     }
     CGRect scrollLineFrame = _scrollLine.frame;
-    scrollLineFrame.origin.x = kItemW*index;
+    scrollLineFrame.origin.x = kItemW*selectedIndex;
     [UIView animateWithDuration:0.3 animations:^{
         [_scrollLine setFrame:scrollLineFrame];
     }];
+}
+- (void)selectLabelWithIndex:(NSInteger)index{
+    [self scrollLabelWithIndex:index];
     if ([self.selectDelegate respondsToSelector:@selector(didSelectedItemAtIndex:)]) {
-        [self.selectDelegate didSelectedItemAtIndex:index];
     }
+    [self.selectDelegate didSelectedItemAtIndex:index];
 }
 
 
 - (void)proxyDefaultPreferences
 {
+    //    self.labels = [NSMutableArray array];
+    self.userInteractionEnabled = YES;
     self.backgroundColor = [UIColor whiteColor];
-    self.titleColor = [UIColor lightGrayColor];
+    self.titleColor = [UIColor darkGrayColor];
     self.titleFontSize = 17.0;
-    self.selectedColor = [UIColor greenColor];
+    self.selectedColor = [UIColor lightGrayColor];
     self.isSeparated = NO;
     _selectedIndex = 0;
 }
-
 
 - (void)changeTitleColorWithColor:(UIColor *)color{
     for (int i = 0; i < _titles.count; i++) {
@@ -259,3 +267,4 @@
 }
 
 @end
+
