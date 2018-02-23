@@ -217,6 +217,7 @@
 }
 
 - (void)scrollLabelWithIndex:(NSInteger)selectedIndex{
+    
     UILabel *selectedLabel = [self viewWithTag:selectedIndex+100];
     for (int i = 0; i < self.titles.count; i++) {
         UILabel *label = [self viewWithTag:100+i];
@@ -226,11 +227,16 @@
             label.textColor = self.titleColor;
         }
     }
+    
     CGRect scrollLineFrame = _scrollLine.frame;
     scrollLineFrame.origin.x = kItemW*selectedIndex;
     [UIView animateWithDuration:0.3 animations:^{
         [_scrollLine setFrame:scrollLineFrame];
     }];
+    
+    if (selectedIndex > 3) {
+        [_bgScroll setContentOffset:CGPointMake(kItemW * (selectedIndex-3), 0)];
+    }
 }
 - (void)selectLabelWithIndex:(NSInteger)index{
     [self scrollLabelWithIndex:index];
@@ -267,4 +273,3 @@
 }
 
 @end
-
