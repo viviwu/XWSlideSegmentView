@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "XWSegCtr.h"
 
-@interface ViewController ()<TouchLabelDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface ViewController ()<XWSegSelectDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet XWSegCtr *segCtr;
 

@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^XWSelectedIndexHandle)(NSInteger selectedIndex);
+typedef void (^XWSelectHandle)(NSInteger selectedIndex);
 
-@protocol TouchLabelDelegate <NSObject>
+@protocol XWSegSelectDelegate <NSObject>
 
 - (void)didSelectedItemAtIndex:(NSInteger)index;
 - (void)longPressToDeleteItem:(NSArray*)newtitles;
@@ -22,8 +22,8 @@ typedef void (^XWSelectedIndexHandle)(NSInteger selectedIndex);
 @property(nonatomic, copy)NSArray * titles;
 @property(nonatomic, assign)NSUInteger selectedIndex;
 @property ( nonatomic, assign) BOOL isSeparated;
-@property(nonatomic, copy) XWSelectedIndexHandle  selectedIndexHandle;
-@property ( nonatomic, strong) id<TouchLabelDelegate>touchDelegate;
+@property(nonatomic, copy) XWSelectHandle  selectedIndexHandle;
+@property ( nonatomic, strong) id<XWSegSelectDelegate>touchDelegate;
 
 
 @property ( nonatomic, strong) UIColor *titleColor;

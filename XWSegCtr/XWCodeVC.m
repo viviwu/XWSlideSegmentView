@@ -9,7 +9,7 @@
 #import "XWCodeVC.h"
 #import "XWSegCtr.h"  
 
-@interface XWCodeVC()<TouchLabelDelegate>
+@interface XWCodeVC()<XWSegSelectDelegate>
 @property(nonatomic, strong)XWSegCtr * segCtr;
 @end
 
