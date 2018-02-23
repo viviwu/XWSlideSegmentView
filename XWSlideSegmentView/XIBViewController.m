@@ -25,7 +25,7 @@
     _segCtr.selectDelegate=(id)self;
     _segCtr.selectedIndex=2;
     _segCtr.titles= @[@"苹果",@"香蕉",@"橘子",@"葡萄",@"西瓜"];
-    _segCtr.selectedIndexHandle=^(NSInteger selectedIndex){
+    _segCtr.selectHandle=^(NSInteger selectedIndex){
         NSLog(@"selectedIndex==%ld", (unsigned long)selectedIndex);
     };
   

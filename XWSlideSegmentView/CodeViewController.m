@@ -60,7 +60,7 @@
     _segCtr.selectDelegate=(id)self;
     [self.view addSubview:_segCtr];
         _segCtr.titles= @[@"苹果",@"香蕉",@"橘子",@"葡萄",@"西瓜"];
-    _segCtr.selectedIndexHandle=^(NSInteger selectedIndex){
+    _segCtr.selectHandle=^(NSInteger selectedIndex){
         NSLog(@"%s==%ld",__func__,  (unsigned long)selectedIndex);
     };
 }

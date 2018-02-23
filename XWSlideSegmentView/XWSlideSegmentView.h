@@ -23,7 +23,7 @@ typedef void (^XWSelectHandle)(NSInteger selectedIndex);
 @property(nonatomic, copy)NSArray * titles;
 @property(nonatomic, assign)NSUInteger selectedIndex;
 @property ( nonatomic, assign) BOOL isSeparated;
-@property(nonatomic, copy) XWSelectHandle  selectedIndexHandle;
+@property(nonatomic, copy) XWSelectHandle  selectHandle;
 @property ( nonatomic, assign) id<XWSegSelectDelegate>selectDelegate;
 
 

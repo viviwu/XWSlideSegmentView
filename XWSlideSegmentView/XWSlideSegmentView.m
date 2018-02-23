@@ -173,7 +173,7 @@
     [_scrollLine setBackgroundColor:self.selectedColor];
     [_bgScroll addSubview:_scrollLine];
     
-    [self selectLabelWithIndex:self.selectedIndex];
+    [self selectLabelWithIndex:_selectedIndex];
 }
 
 - (void)delecteThisitem:(UILongPressGestureRecognizer*)press{
@@ -186,7 +186,7 @@
             [newTitles removeObjectAtIndex:index];
         } 
         self.titles = newTitles;
-        self.selectedIndex = 0;
+        _selectedIndex = 0;
         [UIView animateWithDuration:1.0f animations:^{
             [self configTitlesLabel];
         }];
@@ -200,14 +200,19 @@
     
     UILabel *label = (UILabel *)tap.view;
     NSInteger index = label.tag - 100;
-    self.selectedIndex = index;
+    _selectedIndex = index;
     [self selectLabelWithIndex:index];
-    if (self.selectedIndexHandle) {
-        self.selectedIndexHandle(index);
+    if (self.selectHandle) {
+        self.selectHandle(index);
     }
 }
-
+-(void)setSelectedIndex:(NSUInteger)selectedIndex
+{
+    _selectedIndex = selectedIndex;
+    [self selectLabelWithIndex: selectedIndex];
+}
 - (void)selectLabelWithIndex:(NSInteger)index{
+    
     UILabel *selectedLabel = [self viewWithTag:index+100];
     for (int i = 0; i < self.titles.count; i++) {
         UILabel *label = [self viewWithTag:100+i];
@@ -225,19 +230,17 @@
     if ([self.selectDelegate respondsToSelector:@selector(didSelectedItemAtIndex:)]) {
         [self.selectDelegate didSelectedItemAtIndex:index];
     }
-    
 }
 
 
 - (void)proxyDefaultPreferences
 {
-//    self.labels = [NSMutableArray array];
     self.backgroundColor = [UIColor whiteColor];
     self.titleColor = [UIColor lightGrayColor];
     self.titleFontSize = 17.0;
     self.selectedColor = [UIColor greenColor];
     self.isSeparated = NO;
-    self.selectedIndex = 0;
+    _selectedIndex = 0;
 }
 
 
