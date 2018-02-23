@@ -3,7 +3,7 @@
 //  XWSlideSegmentViewTests
 //
 //  Created by viviwu on 16/4/18.
-//  Copyright © 2016年 viviwu. All rights reserved.
+//  Copyright © 2014年 viviwu. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

@@ -1,19 +1,19 @@
 //
-//  XWCodeVC.m
+//  CodeViewController.m
 //  XWSlideSegmentView
 //
 //  Created by viviwu on 16/4/18.
-//  Copyright © 2016年 viviwu. All rights reserved.
+//  Copyright © 2014年 viviwu. All rights reserved.
 //
 
-#import "XWCodeVC.h"
+#import "CodeViewController.h"
 #import "XWSlideSegmentView.h"  
 
-@interface XWCodeVC()<XWSegSelectDelegate>
+@interface CodeViewController()<XWSegSelectDelegate>
 @property(nonatomic, strong)XWSlideSegmentView * segCtr;
 @end
 
-@implementation XWCodeVC
+@implementation CodeViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
  

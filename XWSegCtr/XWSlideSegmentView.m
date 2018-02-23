@@ -1,9 +1,9 @@
 //
 //  XWSlideSegmentView.m
-//  QQ:286218985
+//  Weibo: https://weibo.com/vivi705
 //
 //  Created by viviwu on 16/4/18.
-//  Copyright © 2016年 viviwu. All rights reserved.
+//  Copyright © 2014年 viviwu. All rights reserved.
 //
 
 #import "XWSlideSegmentView.h"
@@ -27,12 +27,12 @@
 
 -(id)initWithFrame:(CGRect)frame Titles:(NSArray*)titles
 {
-    CGRect rect=frame;
-    frame.size.height=kItemH;
-    frame=rect;
-    self=[super initWithFrame:frame];
+    CGRect rect = frame;
+    frame.size.height = kItemH;
+    frame = rect;
+    self = [super initWithFrame:frame];
     if (self) {
-        self.titles=titles;
+        self.titles = titles;
         [self proxyDefaultPreferences];
         [self addScroll];
         [self configTitlesLabel];
@@ -43,7 +43,7 @@
 
 -(void)awakeFromNib
 {
-    self.titles=_titles;
+    self.titles = _titles;
     [self proxyDefaultPreferences];
     [self addScroll];
     [self configTitlesLabel];
@@ -52,14 +52,14 @@
 }
 
 -(void)addScroll{
-    if (nil==_bgScroll) {
-        _bgScroll=[[UIScrollView alloc]initWithFrame:self.frame];
+    if (nil == _bgScroll) {
+        _bgScroll = [[UIScrollView alloc]initWithFrame:self.frame];
         [self addSubview:_bgScroll];
     }
     
     [_bgScroll setFrame:CGRectMake(0, 0, kScreenW, kItemH)];
-    _bgScroll.backgroundColor=[UIColor whiteColor];
-    _bgScroll.delegate=(id)self;
+    _bgScroll.backgroundColor = [UIColor whiteColor];
+    _bgScroll.delegate = (id)self;
     _bgScroll.scrollEnabled = YES;
     _bgScroll.showsVerticalScrollIndicator = NO;
     _bgScroll.showsHorizontalScrollIndicator = YES;
@@ -68,28 +68,28 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-     self.bgScroll.backgroundColor=self.backgroundColor;
+     self.bgScroll.backgroundColor = self.backgroundColor;
     [self configTitlesLabel];
  
 }
 
 -(void)addnewItemTitle:(NSString*)title
 {
-    NSMutableArray * mArr=[NSMutableArray arrayWithArray:_titles];
+    NSMutableArray * mArr = [NSMutableArray arrayWithArray:_titles];
     [mArr addObject:title];
-    _titles=mArr;
+    _titles = mArr;
     [self configTitlesLabel];
 }
 
 -(void)addNewItemsTitles:(NSArray*)titles
 {
-    NSMutableArray * mArr=[NSMutableArray arrayWithArray:_titles];
+    NSMutableArray * mArr = [NSMutableArray arrayWithArray:_titles];
     for (NSString *title in titles) {
         if ([title isKindOfClass:[NSString class]]) {
             [mArr addObject:title];
         }
     }
-    _titles=mArr;
+    _titles = mArr;
     [self configTitlesLabel];
 }
 
@@ -98,11 +98,11 @@
     if (self.titles.count<1) {
         return nil;
     }
-    NSMutableArray * newTitles=[NSMutableArray arrayWithArray:self.titles];
+    NSMutableArray * newTitles = [NSMutableArray arrayWithArray:self.titles];
     [newTitles removeObjectAtIndex:_selectedIndex];
-    self.titles=newTitles;
+    self.titles = newTitles;
     if (newTitles.count <= _selectedIndex) {
-        _selectedIndex=newTitles.count-1;
+        _selectedIndex = newTitles.count-1;
     }
     [self configTitlesLabel];
     return newTitles;
@@ -110,12 +110,12 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    _bgScroll.contentSize=CGSizeMake(kItemW*_titles.count, 0);
+    _bgScroll.contentSize = CGSizeMake(kItemW*_titles.count, 0);
 }
 
 - (void)configTitlesLabel{
     
-    _bgScroll.contentSize=CGSizeMake(kItemW*_titles.count, 0);
+    _bgScroll.contentSize = CGSizeMake(kItemW*_titles.count, 0);
     _bgScroll.directionalLockEnabled = YES;
     _bgScroll.alwaysBounceVertical = NO;
     [_bgScroll.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
@@ -125,7 +125,7 @@
     {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(i * kItemW, 0, kItemW, kItemH)];
         titleLabel.text = [self.titles objectAtIndex:i];
-        titleLabel.textColor =  self.titleColor;
+        titleLabel.textColor = self.titleColor;
         titleLabel.font = [UIFont systemFontOfSize:self.titleFontSize];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         if (_isSeparated) {
@@ -137,16 +137,16 @@
             }
         }
         titleLabel.tag = 100+i;
-        titleLabel.userInteractionEnabled=YES;
+        titleLabel.userInteractionEnabled = YES;
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchLabelWithGesture:)];
         tap.numberOfTapsRequired = 1;
         titleLabel.userInteractionEnabled = YES;
         [titleLabel addGestureRecognizer:tap];
         
-        UILongPressGestureRecognizer * longPress=[[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(delecteThisitem:)];
-        longPress.minimumPressDuration=0.3;
-        longPress.allowableMovement=5;
+        UILongPressGestureRecognizer * longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(delecteThisitem:)];
+        longPress.minimumPressDuration = 0.3;
+        longPress.allowableMovement = 5;
         [titleLabel addGestureRecognizer:longPress];
         [_bgScroll addSubview:titleLabel];
     }
@@ -162,12 +162,12 @@
     if (UIGestureRecognizerStateBegan == press.state ) {
         UILabel *label = (UILabel *)press.view;
         NSInteger index = label.tag - 100;
-        NSMutableArray * newTitles=[NSMutableArray arrayWithArray:self.titles];
+        NSMutableArray * newTitles = [NSMutableArray arrayWithArray:self.titles];
         if (newTitles.count>index) {
             [newTitles removeObjectAtIndex:index];
         } 
-        self.titles=newTitles;
-        self.selectedIndex=0;
+        self.titles = newTitles;
+        self.selectedIndex = 0;
         [UIView animateWithDuration:1.0f animations:^{
             [self configTitlesLabel];
         }];
@@ -181,7 +181,7 @@
     
     UILabel *label = (UILabel *)tap.view;
     NSInteger index = label.tag - 100;
-    self.selectedIndex=index;
+    self.selectedIndex = index;
     [self selectLabelWithIndex:index];
     if (self.selectedIndexHandle) {
         self.selectedIndexHandle(index);
@@ -212,25 +212,25 @@
 
 -(void)proxyDefaultPreferences
 {
-//    self.labels=[NSMutableArray array];
-    self.backgroundColor=[UIColor whiteColor];
-    self.titleColor=[UIColor lightGrayColor];
-    self.titleFontSize=17.0;
-    self.selectedColor=[UIColor greenColor];
-    self.isSeparated=NO;
-    self.selectedIndex=0;
+//    self.labels = [NSMutableArray array];
+    self.backgroundColor = [UIColor whiteColor];
+    self.titleColor = [UIColor lightGrayColor];
+    self.titleFontSize = 17.0;
+    self.selectedColor = [UIColor greenColor];
+    self.isSeparated = NO;
+    self.selectedIndex = 0;
 }
 
 
 - (void)changeTitleColorWithColor:(UIColor *)color{
-    for (int i = 0; i < _titles.count; i ++) {
+    for (int i = 0; i < _titles.count; i++) {
         UILabel *label = [self viewWithTag:100+i];
         label.textColor = color;
     }
 }
 
 - (void)changeTitleLabelFontWithFont:(CGFloat)font{
-    for (int i = 0; i < _titles.count; i ++) {
+    for (int i = 0; i < _titles.count; i++) {
         UILabel *label = [self viewWithTag:100+i];
         label.font = [UIFont systemFontOfSize:font];
     }

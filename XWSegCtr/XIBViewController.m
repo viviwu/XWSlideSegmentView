@@ -1,15 +1,15 @@
 //
-//  ViewController.m
-//  QQ:286218985
+//  XIBViewController.m
+//  Weibo: https://weibo.com/vivi705
 //
 //  Created by viviwu on 16/4/18.
-//  Copyright © 2016年 viviwu. All rights reserved.
+//  Copyright © 2014年 viviwu. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "XIBViewController.h"
 #import "XWSlideSegmentView.h"
 
-@interface ViewController ()<XWSegSelectDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface XIBViewController ()<XWSegSelectDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet XWSlideSegmentView *segCtr;
 
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation ViewController
+@implementation XIBViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

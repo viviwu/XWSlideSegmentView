@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="XIBViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1669.5999999999999" y="1093.5960591133005"/>
         </scene>
-        <!--CodeVC-->
+        <!--Code View Controller-->
         <scene sceneID="Jm1-GN-PVd">
             <objects>
-                <viewController id="miJ-eh-87S" customClass="XWCodeVC" sceneMemberID="viewController">
+                <viewController id="miJ-eh-87S" customClass="CodeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qa3-PO-7HD"/>
                         <viewControllerLayoutGuide type="bottom" id="rkc-q8-ycC"/>
@@ -164,6 +164,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0Mr-T2-j9W" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Q7F-KX-8As">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
