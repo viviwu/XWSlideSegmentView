@@ -1,6 +1,6 @@
 //
-//  XWSegCtrTests.m
-//  XWSegCtrTests
+//  XWSlideSegmentViewTests.m
+//  XWSlideSegmentViewTests
 //
 //  Created by viviwu on 16/4/18.
 //  Copyright © 2016年 viviwu. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface XWSegCtrTests : XCTestCase
+@interface XWSlideSegmentViewTests : XCTestCase
 
 @end
 
-@implementation XWSegCtrTests
+@implementation XWSlideSegmentViewTests
 
 - (void)setUp {
     [super setUp];

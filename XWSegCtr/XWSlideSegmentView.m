@@ -1,12 +1,12 @@
 //
-//  XWSegCtr.m
+//  XWSlideSegmentView.m
 //  QQ:286218985
 //
 //  Created by viviwu on 16/4/18.
 //  Copyright © 2016年 viviwu. All rights reserved.
 //
 
-#import "XWSegCtr.h"
+#import "XWSlideSegmentView.h"
 
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
@@ -15,7 +15,7 @@
 #define kItemH 35.0f
 #define kScrollLineH    2.0f
 
-@interface XWSegCtr()
+@interface XWSlideSegmentView()
 
 @property ( nonatomic, strong) UIScrollView * bgScroll;
 @property ( nonatomic, strong) UIView *scrollLine;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation XWSegCtr
+@implementation XWSlideSegmentView
 
 -(id)initWithFrame:(CGRect)frame Titles:(NSArray*)titles
 {
@@ -40,12 +40,15 @@
     }
     return self;
 }
+
 -(void)awakeFromNib
 {
     self.titles=_titles;
     [self proxyDefaultPreferences];
     [self addScroll];
     [self configTitlesLabel];
+    
+    [super awakeFromNib];
 }
 
 -(void)addScroll{

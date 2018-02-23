@@ -1,5 +1,5 @@
 //
-//  XWSegCtr.h
+//  XWSlideSegmentView.h
 //  QQ:286218985
 //
 //  Created by viviwu on 16/4/18.
@@ -17,7 +17,7 @@ typedef void (^XWSelectHandle)(NSInteger selectedIndex);
 
 @end
 
-@interface XWSegCtr : UIView
+@interface XWSlideSegmentView : UIView
 
 @property(nonatomic, copy)NSArray * titles;
 @property(nonatomic, assign)NSUInteger selectedIndex;

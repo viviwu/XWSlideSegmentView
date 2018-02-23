@@ -7,11 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "XWSegCtr.h"
+#import "XWSlideSegmentView.h"
 
 @interface ViewController ()<XWSegSelectDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) IBOutlet XWSegCtr *segCtr;
+@property (weak, nonatomic) IBOutlet XWSlideSegmentView *segCtr;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
