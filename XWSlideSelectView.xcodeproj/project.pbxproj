@@ -17,7 +17,8 @@
 		0D8A43E41CC48DF000261036 /* XWSlideSegmentViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43E31CC48DF000261036 /* XWSlideSegmentViewTests.m */; };
 		0D8A43EF1CC48DF000261036 /* XWSlideSegmentViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43EE1CC48DF000261036 /* XWSlideSegmentViewUITests.m */; };
 		0D8A43FE1CC490D600261036 /* XWSlideSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8A43FD1CC490D600261036 /* XWSlideSegmentView.m */; };
-		0D923018204018B6008E50B9 /* 屏幕快照 2018-02-23 17.38.24.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D923017204018B6008E50B9 /* 屏幕快照 2018-02-23 17.38.24.png */; };
+		0D92303D2040F319008E50B9 /* DemoCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D92303C2040F319008E50B9 /* DemoCollectionController.m */; };
+		0D9230872040FC97008E50B9 /* 屏幕快照 2018-02-24 09.50.52.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9230862040FC97008E50B9 /* 屏幕快照 2018-02-24 09.50.52.png */; };
 		0DAC6AA21CC51B590003E9F0 /* CodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAC6AA11CC51B590003E9F0 /* CodeViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +59,10 @@
 		0D8A43F01CC48DF000261036 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D8A43FC1CC490D600261036 /* XWSlideSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWSlideSegmentView.h; sourceTree = "<group>"; };
 		0D8A43FD1CC490D600261036 /* XWSlideSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWSlideSegmentView.m; sourceTree = "<group>"; };
-		0D923017204018B6008E50B9 /* 屏幕快照 2018-02-23 17.38.24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2018-02-23 17.38.24.png"; sourceTree = "<group>"; };
+		0D92303B2040F319008E50B9 /* DemoCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoCollectionController.h; sourceTree = "<group>"; };
+		0D92303C2040F319008E50B9 /* DemoCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoCollectionController.m; sourceTree = "<group>"; };
+		0D9230852040F8FF008E50B9 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		0D9230862040FC97008E50B9 /* 屏幕快照 2018-02-24 09.50.52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "屏幕快照 2018-02-24 09.50.52.png"; sourceTree = "<group>"; };
 		0DAC6AA01CC51B590003E9F0 /* CodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeViewController.h; sourceTree = "<group>"; };
 		0DAC6AA11CC51B590003E9F0 /* CodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,20 +115,22 @@
 		0D8A43C51CC48DF000261036 /* XWSlideSegmentView */ = {
 			isa = PBXGroup;
 			children = (
+				0D92303A2040F2CF008E50B9 /* XWSlideSegmentView */,
 				0D8A43C91CC48DF000261036 /* AppDelegate.h */,
 				0D8A43CA1CC48DF000261036 /* AppDelegate.m */,
 				0D8A43CC1CC48DF000261036 /* XIBViewController.h */,
 				0D8A43CD1CC48DF000261036 /* XIBViewController.m */,
 				0DAC6AA01CC51B590003E9F0 /* CodeViewController.h */,
 				0DAC6AA11CC51B590003E9F0 /* CodeViewController.m */,
-				0D8A43FC1CC490D600261036 /* XWSlideSegmentView.h */,
-				0D8A43FD1CC490D600261036 /* XWSlideSegmentView.m */,
+				0D92303B2040F319008E50B9 /* DemoCollectionController.h */,
+				0D92303C2040F319008E50B9 /* DemoCollectionController.m */,
+				0D9230852040F8FF008E50B9 /* Header.h */,
 				0D8A43CF1CC48DF000261036 /* Main.storyboard */,
 				0D8A43D51CC48DF000261036 /* Assets.xcassets */,
 				0D8A43D71CC48DF000261036 /* LaunchScreen.storyboard */,
 				0D8A43DA1CC48DF000261036 /* Info.plist */,
+				0D9230862040FC97008E50B9 /* 屏幕快照 2018-02-24 09.50.52.png */,
 				0D8A43D21CC48DF000261036 /* XWSlideSegmentView.xcdatamodeld */,
-				0D923017204018B6008E50B9 /* 屏幕快照 2018-02-23 17.38.24.png */,
 				0D8A43C61CC48DF000261036 /* Supporting Files */,
 			);
 			path = XWSlideSegmentView;
@@ -154,6 +160,15 @@
 				0D8A43F01CC48DF000261036 /* Info.plist */,
 			);
 			path = XWSlideSegmentViewUITests;
+			sourceTree = "<group>";
+		};
+		0D92303A2040F2CF008E50B9 /* XWSlideSegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				0D8A43FC1CC490D600261036 /* XWSlideSegmentView.h */,
+				0D8A43FD1CC490D600261036 /* XWSlideSegmentView.m */,
+			);
+			name = XWSlideSegmentView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +276,8 @@
 			files = (
 				0D8A43D91CC48DF000261036 /* LaunchScreen.storyboard in Resources */,
 				0D8A43D61CC48DF000261036 /* Assets.xcassets in Resources */,
-				0D923018204018B6008E50B9 /* 屏幕快照 2018-02-23 17.38.24.png in Resources */,
 				0D8A43D11CC48DF000261036 /* Main.storyboard in Resources */,
+				0D9230872040FC97008E50B9 /* 屏幕快照 2018-02-24 09.50.52.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D92303D2040F319008E50B9 /* DemoCollectionController.m in Sources */,
 				0D8A43D41CC48DF000261036 /* XWSlideSegmentView.xcdatamodeld in Sources */,
 				0D8A43CE1CC48DF000261036 /* XIBViewController.m in Sources */,
 				0D8A43FE1CC490D600261036 /* XWSlideSegmentView.m in Sources */,

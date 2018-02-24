@@ -32,17 +32,17 @@
                                 <rect key="frame" x="0.0" y="131" width="375" height="598"/>
                                 <color key="backgroundColor" red="0.97695339250000002" green="1" blue="0.72114645259999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pqo-hx-HG8">
-                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="gt2-bl-a6y">
-                                        <rect key="frame" x="10" y="10" width="120" height="120"/>
+                                        <rect key="frame" x="10" y="10" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.75769774320000005" blue="0.24531053429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5999999999999" y="1093.5960591133005"/>
+            <point key="canvasLocation" x="1695" y="1721"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="Jm1-GN-PVd">
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YaC-17-8hX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="1789"/>
+            <point key="canvasLocation" x="1694" y="1033"/>
         </scene>
         <!--Item-->
         <scene sceneID="EBt-aS-n49">
@@ -122,7 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iay-3A-5BZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="1059"/>
+            <point key="canvasLocation" x="778" y="1713"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xh1-Do-gCk">
@@ -135,8 +135,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="PJM-C0-Er5" kind="relationship" relationship="viewControllers" id="Q2g-BI-rXJ"/>
-                        <segue destination="SBx-7z-b5h" kind="relationship" relationship="viewControllers" id="gqC-9a-V9c"/>
+                        <segue destination="SBx-7z-b5h" kind="relationship" relationship="viewControllers" id="yAM-a1-Faj"/>
+                        <segue destination="PJM-C0-Er5" kind="relationship" relationship="viewControllers" id="1up-EN-HnG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HgB-BD-qOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -160,7 +160,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RNi-bX-fHV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="1772"/>
+            <point key="canvasLocation" x="777" y="1003"/>
         </scene>
     </scenes>
 </document>

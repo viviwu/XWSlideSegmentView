@@ -8,6 +8,8 @@
 
 #import "CodeViewController.h"
 #import "XWSlideSegmentView.h"  
+#import "DemoCollectionController.h"
+#import "Header.h"
 
 @interface CodeViewController()<XWSegSelectDelegate>
 
@@ -22,12 +24,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+     
+    // Do any additional setup after loading the view.
+}
+
+-(void)viewWillLayoutSubviews{
+    
     _channels = @[@"要闻", @"推荐", @"自选", @"7x24", @"财富号", @"个股", @"看盘", @"大盘", @"提示", @"头条"];
+    UIEdgeInsets safeArea = UIEdgeInsetsZero;
+#ifdef __IPHONE_11_0
     if (@available(iOS 11.0, *)) {
-        self.safeTop = 88.0;
+        safeArea = self.view.safeAreaInsets;
     } else {
         // Fallback on earlier versions
     }
+#endif
+    _safeTop = safeArea.top;
     NSLog(@"self.safeTop==%f", self.safeTop);
     _slideSegView = [[XWSlideSegmentView alloc]initWithFrame: CGRectMake(0, self.safeTop, kSelfVB_W, 35.0) Titles:_channels];
     _slideSegView.backgroundColor = [UIColor whiteColor];
@@ -43,10 +55,11 @@
     self.scrollView.scrollEnabled = YES;
     
     [self addSubViewControllers];
+    
     [self.view bringSubviewToFront:_slideSegView];
-    // Do any additional setup after loading the view.
+    
+    [super viewWillLayoutSubviews];
 }
-
 //- (void)viewWillLayoutSubviews{
 //    [super viewWillLayoutSubviews];
 //}
@@ -54,12 +67,8 @@
 - (void)addSubViewControllers{
     if (self.scrollView) {
         for (int i=0; i<_channels.count; i++) {
-            UIViewController * vc = [[UIViewController alloc]init];
+            DemoCollectionController * vc = [[DemoCollectionController alloc]init];
             [vc.view setFrame:CGRectMake(kSelfVB_W*i, 0, kSelfVB_W, kSelfVB_H-35.0)];
-            int R = (arc4random() % 256) ;
-            int G = (arc4random() % 256) ;
-            int B = (arc4random() % 256) ;
-            vc.view.backgroundColor = RGB(R, G, B);
             [self.scrollView addSubview: vc.view];
             [self addChildViewController: vc];
         }
